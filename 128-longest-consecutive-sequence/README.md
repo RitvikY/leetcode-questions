@@ -1,6 +1,6 @@
 <h2><a href="https://leetcode.com/problems/longest-consecutive-sequence/">128. Longest Consecutive Sequence</a></h2><h3>Medium</h3><hr><div><p>Given an unsorted array of integers <code>nums</code>, return <em>the length of the longest consecutive elements sequence.</em></p>
 
-<p>You must write an algorithm that runs in&nbsp;<code>O(n)</code>&nbsp;time.</p>
+
 
 <p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
