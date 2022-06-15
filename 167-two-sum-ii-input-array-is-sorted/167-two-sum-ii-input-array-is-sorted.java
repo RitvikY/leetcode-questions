@@ -6,8 +6,9 @@ class Solution {
         }
         
         int counter = 0;
+        int i = 0;
         System.out.println(numbers.length);
-        for(int i = 0; i < numbers.length - 1; i++){
+        
           
             //[5,25,75] , 100
             int curr = numbers[i];
@@ -33,8 +34,6 @@ class Solution {
                     counter--;
                 }
             }
-            
-    }
         
        return new int[2];
 
