@@ -18,7 +18,6 @@ class Solution {
             String sub = s2.substring(start, end+1);
             //System.out.println(sub);
 
-            
             char charsSub[] = sub.toCharArray();
             Arrays.sort(charsSub);
             String sortedSub = new String(charsSub);
