@@ -17,12 +17,14 @@ class Solution {
          
             charArr[str[counter]]++; // this will update the count of each letter in the string
             
-            while(charArr[str[counter]] > 1) { // this while loop will adjust the start position to the position of the repeating index, while also updating the count of each letter is passes
+            while(charArr[str[counter]] > 1) { /* this while loop will adjust the start position to the position of the repeating 
+                                                * index, while also updating the count of each letter is passes */
                 charArr[str[start]]--;
                 start++;
             }
             
-            finalLen = Math.max(finalLen, (counter - start + 1)); // this will compare the length of the calculated string with the previous largest length to find the max length
+            finalLen = Math.max(finalLen, (counter - start + 1)); /* this will compare the length of the calculated string with the
+                                                                   * previous largest length to find the max length */
             counter++;
             
         }
