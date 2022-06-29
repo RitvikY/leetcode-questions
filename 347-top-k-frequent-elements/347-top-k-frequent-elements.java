@@ -25,13 +25,13 @@ class Solution {
         }
 
         //get all elements from the heap
-        int[] resultArr=new int[queue.size()];
+        int[] arr=new int[queue.size()];
         int index =0;
         while (queue.size() > 0) {
-            resultArr[index++]=queue.poll().getKey();
+            arr[index++]=queue.poll().getKey();
         }
 
-        return resultArr;
+        return arr;
     }
         
         
