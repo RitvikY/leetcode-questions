@@ -19,7 +19,11 @@ class Solution {
                 left = middle;
             }
         }
-         // in the case of shifts, the left element will always be greater than the right element. Since we have found the midpoint, we know that the min element is the value assigned to the index 'right'        
+         /* in the case of shifts, the left element will always be greater than the 
+          * right element. Since we have found the midpoint, we know that the min
+          * element is the value assigned to the index 'right'   
+          */
+        
         return nums[right]; 
     
     }
