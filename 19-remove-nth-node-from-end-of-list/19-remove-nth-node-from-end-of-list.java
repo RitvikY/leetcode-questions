@@ -11,38 +11,41 @@
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         
-        int counter = 0;
+        /* the solution for this approach is to traverse the linked list to find the 
+         *length, and then remove the len-nth node */
         
+        
+        int counter = 0;
         ListNode curr = head, start = head;
         
+        // finding the length of the list
         while(curr.next !=null) {
             counter++;
             curr = curr.next;
         }
         
-        if(counter == 0){
+        if(counter == 0){ // takes care of the empty list
             return null;
-        }
-        if(counter +1 == n){
+        }else if(counter +1 == n){ // takes care of if 1st element needs to be removed
             return head.next;
         }
      
+        
         int trav = counter - n;
-        if (trav < 0){trav = 0;}
         
         head = start;
-        for(int i = 0; i < trav; i++){
+        
+        // moving to the position before the skip
+        for (int i = 0; i < trav; i++){
             start = start.next;
         }
         
-        if(start.next == null) {
+        if(start.next == null) { // if reach the end of the list
+            return head;
+        } else{
+            start.next = start.next.next;
             return head;
         }
-        start.next = start.next.next;
-        return head;
-        
-        
-    
         
     }
 }
