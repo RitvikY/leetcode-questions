@@ -21,25 +21,24 @@ class Solution
         // checking to make sure all numbers are added
         while(l1 != null || l2 != null || carry > 0 ) {
        
-            int sum = 0; //to store the sum at every digit pair iteration 
-            
-            if(l1 != null) { //adding list one node to the local sum
+            int sum = 0; 
+            if(l1 != null) { 
            
-                sum += l1.val; //adding to the sum 
+                sum += l1.val; 
                 l1= l1.next; //moving the l1 pointer to the next node
             }
             
             if(l2 != null) {
-                sum+= l2.val; //adding to the sum 
+                sum+= l2.val; 
                 l2= l2.next;  //moving the l2 pointer to the next node
             }
-            sum += carry; //adding the sum inclusive carry
+            sum += carry;
             carry = sum / 10; //extracting the first digit 
             ListNode node= new ListNode(sum % 10); //extracting the last digit and creating the node 
-            temp.next = node;//linking the node to the list 
+            temp.next = node;
             
-            temp= temp.next;//moving the temp 
+            temp= temp.next;
         }
-        return head.next; //reaturning the new head of the new list 
+        return head.next; 
     }
 }
