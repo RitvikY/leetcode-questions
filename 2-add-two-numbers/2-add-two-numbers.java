@@ -8,42 +8,39 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+class Solution 
+{
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) 
+    {
+        ListNode head= new ListNode(-1);
+		//creating a node in order to store the sum of digit in a List format 
+        ListNode temp= head; //we are using temp to add node to the new List 
         
+        int carry= 0; //we are storing the carry at every digit pair iteration 
         
-        /* this solution requires us to add both lists together node by node and have
-         * a carry digit to account for sums > 9 */
-        
-        
-        ListNode head = new ListNode(0); // new list
-        ListNode curr = head;
-        int carry = 0;
-        
-        
-        while(l1 != null || l2 != null || carry != 0){ // will stop only when both lists are traversed 
-            int x, y;
-            if(l1 != null) {
-                x = l1.val;
-            } else {
-                x = 0;
+        while(l1 != null || l2 != null || carry > 0 )
+		//our loop terminating condtition, all the numbers will be added 
+        {
+            int sum= 0; //to store the sum at every digit pair iteration 
+            
+            if(l1 != null) //adding list one node to the local sum
+            {
+                sum+= l1.val; //adding to the sum 
+                l1= l1.next; //moving the l1 pointer to the next node
             }
             
-             if(l2 != null) {
-                y = l2.val;
-            } else {
-                y = 0;
+            if(l2 != null)
+            {
+                sum+= l2.val; //adding to the sum 
+                l2= l2.next;  //moving the l2 pointer to the next node
             }
+            sum+= carry; //adding the sum inclusive carry
+            carry= sum / 10; //extracting the first digit 
+            ListNode node= new ListNode(sum % 10); //extracting the last digit and creating the node 
+            temp.next= node;//linking the node to the list 
             
-            
-            int sum = x + y + carry;
-            carry = sum / 10; // we do this to update carry if sum >= 10
-            curr.next = new ListNode(sum % 10);
-            curr = curr.next;
-            if (l1 != null) l1 = l1.next;
-            if (l2 != null) l2 = l2.next;
+            temp= temp.next;//moving the temp 
         }
-        
-        return head.next;
+        return head.next; //reaturning the new head of the new list 
     }
 }
