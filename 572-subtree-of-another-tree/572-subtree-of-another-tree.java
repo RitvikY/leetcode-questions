@@ -18,6 +18,8 @@ class Solution {
 
     if(root==null) return false;
     if(subRoot==null) return true;
+      
+    // checking if the left and right of both trees are the same
     return helper(root,subRoot) || isSubtree(root.left,subRoot) || isSubtree(root.right,subRoot);
 }
 
@@ -25,6 +27,8 @@ boolean helper(TreeNode r,TreeNode s){
 
     if(r==null && s==null) return true;
     if(r==null || s==null) return false;
+    
+    // return the lsft and right side subtrees are the same as well as the head values
     return (r.val==s.val) && helper(r.left,s.left) && helper(r.right,s.right);
 }   
     
