@@ -26,7 +26,7 @@
 </pre>
 
 <p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+<p><strong>Constraint:</strong></p>
 
 <ul>
 	<li>The number of nodes in the tree is in the range <code>[0, 5000]</code>.</li>
