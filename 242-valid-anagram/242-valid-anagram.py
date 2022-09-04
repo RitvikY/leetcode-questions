@@ -8,9 +8,6 @@ class Solution:
             
         for letter in t:
             listt[letter] = listt.get(letter, 0) + 1
-       
-        print(listt)
-        print(lists)
         
         return listt == lists
         
